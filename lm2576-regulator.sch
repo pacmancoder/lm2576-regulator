@@ -92,10 +92,10 @@ Wire Wire Line
 	6400 4000 5650 4000
 Connection ~ 6400 4200
 $Comp
-L Device:CP C3
+L Device:CP C4
 U 1 1 5E362070
 P 6350 3050
-F 0 "C3" H 6468 3096 50  0000 L CNN
+F 0 "C4" H 6468 3096 50  0000 L CNN
 F 1 "100uF" H 6468 3005 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_8x10" H 6388 2900 50  0001 C CNN
 F 3 "~" H 6350 3050 50  0001 C CNN
@@ -107,7 +107,7 @@ L Device:L L2
 U 1 1 5E362858
 P 6100 2850
 F 0 "L2" V 6200 2850 50  0000 C CNN
-F 1 "20uH" V 6050 2850 50  0000 C CNN
+F 1 "22uH" V 6050 2850 50  0000 C CNN
 F 2 "Inductor_SMD:L_12x12mm_H8mm" H 6100 2850 50  0001 C CNN
 F 3 "~" H 6100 2850 50  0001 C CNN
 	1    6100 2850
@@ -163,10 +163,10 @@ VIN
 Wire Wire Line
 	4200 4000 4100 4000
 Connection ~ 4200 4000
-Text GLabel 6700 2850 2    50   Input ~ 0
+Text GLabel 6800 2850 2    50   Input ~ 0
 VOUT
 Wire Wire Line
-	6500 4200 6400 4200
+	7100 4200 6950 4200
 Wire Wire Line
 	6400 4550 6400 4600
 Wire Wire Line
@@ -232,12 +232,12 @@ F 3 "" H 5150 4600 50  0001 C CNN
 	1    5150 4600
 	1    0    0    -1  
 $EndComp
-Text GLabel 6500 4200 2    50   Input ~ 0
+Text GLabel 7100 4200 2    50   Input ~ 0
 FILTER_IN
 Text GLabel 5900 2850 0    50   Input ~ 0
 FILTER_IN
 Wire Wire Line
-	6350 2850 6700 2850
+	6350 2850 6800 2850
 Connection ~ 6350 2850
 Wire Wire Line
 	5900 2850 5950 2850
@@ -246,21 +246,9 @@ Wire Wire Line
 Wire Wire Line
 	4450 3500 4550 3500
 Wire Notes Line
-	3750 3650 7000 3650
-Wire Notes Line
-	7000 3650 7000 4900
-Wire Notes Line
-	7000 4900 3750 4900
-Wire Notes Line
 	3750 4900 3750 3650
 Text Notes 3800 3750 0    50   ~ 0
 Regulator
-Wire Notes Line
-	5450 2600 7000 2600
-Wire Notes Line
-	7000 2600 7000 3600
-Wire Notes Line
-	7000 3600 5450 3600
 Wire Notes Line
 	5450 3600 5450 2600
 Text Notes 5500 2700 0    50   ~ 0
@@ -334,4 +322,49 @@ Wire Wire Line
 Connection ~ 4700 2900
 Wire Wire Line
 	4750 2800 4600 2800
+$Comp
+L Device:CP C3
+U 1 1 5E3B4737
+P 6950 4400
+F 0 "C3" H 7068 4446 50  0000 L CNN
+F 1 "1000uF" H 7068 4355 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10.5" H 6988 4250 50  0001 C CNN
+F 3 "~" H 6950 4400 50  0001 C CNN
+	1    6950 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 4250 6950 4200
+Connection ~ 6950 4200
+Wire Wire Line
+	6950 4200 6400 4200
+$Comp
+L power:GND #PWR0107
+U 1 1 5E3B547D
+P 6950 4600
+F 0 "#PWR0107" H 6950 4350 50  0001 C CNN
+F 1 "GND" H 6955 4427 50  0000 C CNN
+F 2 "" H 6950 4600 50  0001 C CNN
+F 3 "" H 6950 4600 50  0001 C CNN
+	1    6950 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 4550 6950 4600
+Wire Notes Line
+	7550 3650 7550 4900
+Wire Notes Line
+	3750 3650 7550 3650
+Wire Notes Line
+	3750 4900 7550 4900
+Wire Notes Line
+	7550 3600 7550 2600
+Wire Notes Line
+	5450 3600 7550 3600
+Wire Notes Line
+	5450 2600 7550 2600
+Text Label 5750 4200 3    50   ~ 0
+SCHOTTKY
+Text Notes 3750 2550 0    50   ~ 0
+LM2576-5 Low Ripple regulator
 $EndSCHEMATC
